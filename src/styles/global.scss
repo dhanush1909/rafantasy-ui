@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+
+body {
+  font-family: "Roboto Slab", serif;
+}
+
+.v-btn {
+  &.orange {
+    background-color: #ff8303 !important;
+
+    .v-btn__content {
+      color: #ffffff;
+      font-size: 0.7rem;
+    }
+  }
+}
