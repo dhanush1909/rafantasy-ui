@@ -20,7 +20,11 @@
             required
           ></v-text-field>
         </v-col>
-        <v-col><v-btn class="orange">Sign In</v-btn></v-col>
+        <v-col class="sign-in-button">
+          <div><v-btn class="orange">Sign In</v-btn></div>
+          <div><span>Forgot Password?</span></div>
+          <div><span>New here? Sign In</span></div>
+        </v-col>
       </v-row>
     </v-form>
   </div>
@@ -64,6 +68,19 @@ export default {
       .title {
         font-size: 24px;
         color: #ffffff;
+      }
+
+      &.sign-in-button {
+        flex-direction: column;
+        align-items: center;
+        & > div {
+          flex: 1;
+        }
+
+        span {
+          color: #ffffff;
+          font-size: 12px;
+        }
       }
     }
 
