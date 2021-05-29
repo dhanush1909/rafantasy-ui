@@ -5,7 +5,10 @@
         <img height="100px" src="@/assets/logo/logo.png" />
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn class="orange">Sign Up</v-btn>
+      <div class="header-right-buttons">
+        <v-btn class="orange">Sign Up</v-btn>
+        <v-btn class="orange">Sign In</v-btn>
+      </div>
     </v-app-bar>
   </div>
 </template>
@@ -15,3 +18,11 @@ export default {
   name: "Header",
 };
 </script>
+
+<style lang="scss">
+.header-right-buttons button {
+  padding: 0 8px !important;
+  height: 25px !important;
+  margin: 0 5px;
+}
+</style>
