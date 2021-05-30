@@ -7,7 +7,8 @@
     >
       <v-col cols="6"> </v-col>
       <v-col cols="6" class="greysclae-bg">
-        <Login />
+        <!-- <Login /> -->
+        <slot name="auth"></slot>
       </v-col>
     </v-row>
   </v-container>
@@ -15,7 +16,7 @@
 
 <script>
 import backgroundUrl from "@/assets/loginPage/login-background.jpg";
-import Login from "@/components/Login";
+// import Login from "@/components/Login";
 
 export default {
   name: "AuthCommon",
@@ -25,7 +26,7 @@ export default {
     };
   },
   components: {
-    Login,
+    // Login,
   },
 };
 </script>

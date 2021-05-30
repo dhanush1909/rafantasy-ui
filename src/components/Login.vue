@@ -1,6 +1,6 @@
 <template>
   <div class="login-main">
-    <v-form class="main" v-model="valid">
+    <v-form ref="form" class="main" v-model="valid">
       <v-row>
         <v-col><span class="title">Sign In</span></v-col>
         <v-col cols="12">
@@ -21,7 +21,7 @@
           ></v-text-field>
         </v-col>
         <v-col class="sign-in-button">
-          <div><v-btn class="orange">Sign In</v-btn></div>
+          <div><v-btn class="orange" @click="login">Sign In</v-btn></div>
           <div><span>Forgot Password?</span></div>
           <div><span>New here? Sign In</span></div>
         </v-col>
@@ -31,6 +31,8 @@
 </template>
 
 <script>
+import authService from "@/service/AuthService";
+
 export default {
   name: "Login",
   data() {
@@ -43,6 +45,16 @@ export default {
       ],
       passwordRules: [(v) => !!v || "Password is required"], // TODO: Moves common rules to utils file
     };
+  },
+  methods: {
+    login() {
+      try {
+        this.$refs.form.validate();
+        authService.login(this.email, this.password);
+      } catch (e) {
+        alert("Bad credentials: " + e);
+      }
+    },
   },
 };
 </script>
