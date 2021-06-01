@@ -10,22 +10,30 @@
         <Login />
       </v-col>
     </v-row>
+    <v-row gutters="30" style="margin-top: 1%; margin-left: 2%" >
+      <v-col v-for="(item, index) in dummyContent" :key="index">
+        <Info :num="index+1" :content="item.content"/>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script>
 import backgroundUrl from "@/assets/loginPage/login-background.jpg";
 import Login from "@/components/Login";
+import Info from "../../components/Info";
 
 export default {
   name: "AuthCommon",
   data() {
     return {
       backgroundUrl,
+      dummyContent: [{content: "Some Info goes here"}, {content: "test 1"}, {content: "test 2"}],
     };
   },
   components: {
     Login,
+    Info
   },
 };
 </script>
