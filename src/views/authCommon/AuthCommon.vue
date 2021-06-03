@@ -11,7 +11,7 @@
       </v-col>
     </v-row>
     <v-row gutters="30" style="margin-top: 1%; margin-left: 2%" >
-      <v-col v-for="(item, index) in dummyContent" :key="index">
+      <v-col v-for="(item, index) in dummyContent" :style="{'margin-top': '30px'}" :key="index">
         <Info :num="index+1" :content="item.content"/>
       </v-col>
     </v-row>

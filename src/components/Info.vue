@@ -1,23 +1,18 @@
 <template>
   <div>
-    <v-btn
-      fab
-      dark
-      small
-      color="#A35709"
-      style="margin-left: 5%; margin-bottom: -4%; z-index: 100">
-      {{num}}
-    </v-btn>
     <v-card
-      class="justify-center"
-      min-width="350"
-      max-width="350"
-      min-height="150"
-      max-height="150"
+      class="text-container"
       outlined
       rounded
-      color="#F0E3CA"
     >
+      <v-btn
+        fab
+        dark
+        small
+        class="number-text"
+      >
+      {{num}}
+    </v-btn>
       <div class="info-class">
         <p>{{content}}</p>
       </div>
@@ -45,5 +40,20 @@ export default {
   margin: auto;
   text-align: center;
   padding: 70px 0;
+}
+.text-container {
+  min-width: 250px;
+  max-width: 70%;
+  min-height: 150px;
+  max-height: 150px;
+  background-color:#F0E3CA !important;
+  margin: 0 auto;
+}
+
+.number-text {
+  background-color: #A35709 !important;
+  position: absolute;
+  top: -20px;
+  left: 5%;
 }
 </style>

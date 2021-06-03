@@ -23,7 +23,7 @@
         <v-col class="sign-in-button">
           <div><v-btn class="orange">Sign In</v-btn></div>
           <div><span>Forgot Password?</span></div>
-          <div><span>New here? Sign In</span></div>
+          <div><span>New here? Sign Up</span></div>
         </v-col>
       </v-row>
     </v-form>
@@ -59,7 +59,9 @@ export default {
   align-items: center;
 
   .v-form {
-    width: 70%;
+    width: 50%;
+    min-width: 250px;
+    max-width: 450px;
 
     .col {
       display: flex;
@@ -86,7 +88,7 @@ export default {
 
     .v-input {
       .v-label {
-        padding-left: 5px;
+        padding-left: 10px;
         font-size: 0.8rem;
       }
 
@@ -109,8 +111,8 @@ export default {
     .v-text-field input {
       border: none;
       background-color: white;
-      border-radius: 20px;
-      height: 30px;
+      border-radius: 10px;
+      height: 40px;
       padding: 0 10px;
     }
 
