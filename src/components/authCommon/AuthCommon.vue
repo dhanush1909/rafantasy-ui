@@ -7,7 +7,7 @@
     >
       <v-col cols="6"> </v-col>
       <v-col cols="6" class="greysclae-bg">
-        <Login />
+        <slot name="auth"></slot>
       </v-col>
     </v-row>
     <v-row gutters="30" style="margin-top: 1%; margin-left: 2%" >
@@ -20,7 +20,6 @@
 
 <script>
 import backgroundUrl from "@/assets/loginPage/login-background.jpg";
-import Login from "@/components/Login";
 import Info from "../../components/Info";
 
 export default {
@@ -32,7 +31,6 @@ export default {
     };
   },
   components: {
-    Login,
     Info
   },
 };
