@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import backgroundUrl from "@/assets/loginPage/login-background.jpg";
+import backgroundUrl from "@/assets/authentication/login-background.jpg";
 import Info from "../../components/Info";
 
 export default {

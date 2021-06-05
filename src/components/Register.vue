@@ -2,7 +2,33 @@
   <div class="login-main">
     <v-form class="main" v-model="valid">
       <v-row>
-        <v-col><span class="title">Sign In</span></v-col>
+        <v-col><span class="title">Register and Start Playin'</span></v-col>
+        <v-col cols="12">
+          <v-col cols="6">
+            <v-text-field
+              v-model="firstName"
+              :rules="firstNameRules"
+              label="First Name"
+              required
+            ></v-text-field>
+          </v-col>
+          <v-col cols="6">
+            <v-text-field
+              v-model="lastName"
+              label="Last Name"
+              :rules="lastNameRules"
+              required
+            ></v-text-field>
+          </v-col>
+        </v-col>
+        <v-col cols="12">
+          <v-text-field
+            type="date"
+            v-model="dateOfBirth"
+            label="Date of Birth"
+            required
+          ></v-text-field>
+        </v-col>
         <v-col cols="12">
           <v-text-field
             v-model="email"
@@ -12,19 +38,30 @@
           ></v-text-field>
         </v-col>
         <v-col cols="12">
-          <v-text-field
-            v-model="password"
-            :rules="passwordRules"
-            type="password"
-            label="Password"
-            required
-          ></v-text-field>
+          <v-col cols="6">
+            <v-text-field
+              v-model="password"
+              :rules="passwordRules"
+              type="password"
+              label="Password"
+              required
+            ></v-text-field>
+          </v-col>
+          <v-col cols="6">
+            <v-text-field
+              type="password"
+              v-model="confirmPassword"
+              :rules="[password === confirmPassword || 'Password must match']"
+              label="Confirm Password"
+              required
+            ></v-text-field>
+          </v-col>
         </v-col>
         <v-col class="sign-in-button">
-          <div><v-btn class="orange">Sign In</v-btn></div>
+          <div><v-btn class="orange">Register</v-btn></div>
           <div><span>Forgot Password?</span></div>
           <div style="cursor: pointer" @click="$emit('toggleLogin')">
-            <span>New here? Sign Up</span>
+            <span>Existing user? Login here</span>
           </div>
         </v-col>
       </v-row>
@@ -33,12 +70,20 @@
 </template>
 
 <script>
+import moment from "moment";
 export default {
-  name: "Login",
+  name: "Register",
   data() {
     return {
-      email: "",
+      firstName: "",
+      firstNameRules: [(v) => !!v || "First Name is required"],
+      lastName: "",
+      lastNameRules: [(v) => !!v || "Last Name is required"],
+      username: "", // todo: is Email enough or username would be a good addition?
+      dateOfBirth: moment(new Date()).format("yyyy-MM-DD"),
       password: "",
+      confirmPassword: "",
+      email: "",
       emailRules: [
         (v) => !!v || "E-mail is required",
         (v) => /.+@.+/.test(v) || "E-mail must be valid",
@@ -49,9 +94,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
-// $input-slot-margin-bottom: none; //TODO: figure out a way to overwrite vuetify sass variables
-
+<style scoped lang="scss">
 .login-main {
   width: 100%;
   height: 100%;
@@ -60,6 +103,9 @@ export default {
   justify-content: center;
   align-items: center;
 
+  .col {
+    padding-bottom: 0px;
+  }
   .v-form {
     width: 50%;
     min-width: 250px;

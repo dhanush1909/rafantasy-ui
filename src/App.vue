@@ -7,7 +7,7 @@
 
 <script>
 import Header from "@/components/Header";
-import LoginPage from "@/views/loginPage/LoginPage";
+import LoginPage from "@/views/authentication/LoginPage";
 
 export default {
   name: "app",
