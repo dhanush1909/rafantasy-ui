@@ -8,14 +8,21 @@
       <div class="header-right-buttons">
         <v-btn class="orange">Sign Up</v-btn>
         <v-btn class="orange">Sign In</v-btn>
+        <v-btn class="orange" @click="() => authService.logout()">Logout</v-btn>
       </div>
     </v-app-bar>
   </div>
 </template>
 
 <script>
+import authService from '@/service/AuthService';
 export default {
   name: "Header",
+  data() {
+    return {
+      authService: authService
+    }
+  }
 };
 </script>
 
