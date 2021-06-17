@@ -10,9 +10,13 @@
         <slot name="auth"></slot>
       </v-col>
     </v-row>
-    <v-row gutters="30" style="margin-top: 1%; margin-left: 2%" >
-      <v-col v-for="(item, index) in dummyContent" :style="{'margin-top': '30px'}" :key="index">
-        <Info :num="index+1" :content="item.content"/>
+    <v-row gutters="30" style="margin-top: 1%; margin-left: 2%">
+      <v-col
+        v-for="(item, index) in dummyContent"
+        :style="{ 'margin-top': '30px' }"
+        :key="index"
+      >
+        <Info :num="index + 1" :content="item.content" />
       </v-col>
     </v-row>
   </v-container>
@@ -27,11 +31,15 @@ export default {
   data() {
     return {
       backgroundUrl,
-      dummyContent: [{content: "Some Info goes here"}, {content: "test 1"}, {content: "test 2"}],
+      dummyContent: [
+        { content: "Some Info goes here" },
+        { content: "test 1" },
+        { content: "test 2" },
+      ],
     };
   },
   components: {
-    Info
+    Info,
   },
 };
 </script>

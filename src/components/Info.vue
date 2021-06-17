@@ -1,23 +1,14 @@
 <template>
   <div>
-    <v-card
-      class="text-container"
-      outlined
-      rounded
-    >
-      <v-btn
-        fab
-        dark
-        small
-        class="number-text"
-      >
-      {{num}}
-    </v-btn>
+    <v-card class="text-container" outlined rounded>
+      <v-btn fab dark small class="number-text">
+        {{ num }}
+      </v-btn>
       <div class="info-class">
-        <p>{{content}}</p>
+        <p>{{ content }}</p>
       </div>
-  </v-card>
-</div>
+    </v-card>
+  </div>
 </template>
 
 <script>
@@ -26,13 +17,13 @@ export default {
   props: {
     num: {
       type: Number,
-      required: true
+      required: true,
     },
     content: {
-      type: String
-    }
-  }
-}
+      type: String,
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -46,12 +37,12 @@ export default {
   max-width: 70%;
   min-height: 150px;
   max-height: 150px;
-  background-color:#F0E3CA !important;
+  background-color: #f0e3ca !important;
   margin: 0 auto;
 }
 
 .number-text {
-  background-color: #A35709 !important;
+  background-color: #a35709 !important;
   position: absolute;
   top: -20px;
   left: 5%;
