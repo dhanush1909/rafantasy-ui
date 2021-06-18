@@ -43,8 +43,6 @@ const getActions = () => ({
 const getMutations = () => ({
   setUser(state, user) {
     state.user = user;
-
-    console.log(state.user);
   },
 
   setRoles(state, roles) {
