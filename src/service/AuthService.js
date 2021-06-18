@@ -35,6 +35,7 @@ class AuthService {
 
   logout = () => {
     this.kc.logout();
+    localStorage.removeItem("accessToken");
     store.dispatch("user/logoutSuccessful");
   };
 }
