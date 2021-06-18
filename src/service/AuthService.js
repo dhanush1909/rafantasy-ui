@@ -24,6 +24,7 @@ class AuthService {
             parsedToken: this.kc.tokenParsed,
             token: this.kc.token,
           });
+          localStorage.setItem("accessToken", this.kc.token);
           callback();
         }
       })
